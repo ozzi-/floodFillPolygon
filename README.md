@@ -11,3 +11,6 @@ for (Point point : polyPixels) {
 }
 ```
 ![result](https://i.imgur.com/5EBRQ6e.png)
+
+
+Note, certain narrow angled corners won't be filled properly, as flood filling fails here
