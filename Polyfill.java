@@ -41,10 +41,6 @@ public class Polyfill {
 		return false;
 	}
 
-	private static int sign (int x) {
-        return (x > 0) ? 1 : (x < 0) ? -1 : 0;
-}
-	
 	public static HashSet<Point> calculateBresenhamLine(int xstart, int ystart, int xend, int yend) {
 		HashSet<Point> linePixels = new HashSet<Point>();
 		int x, y, dx, dy, incx, incy, pdx, pdy, es, el, err;
@@ -52,8 +48,8 @@ public class Polyfill {
 		dx = xend - xstart;
 		dy = yend - ystart;
 
-		incx = sign(dx);
-		incy = sign(dy);
+		incx = (int) Math.signum(dx);
+		incy = (int) Math.signum(dy);
 
 		if (dx < 0)
 			dx = -dx;
